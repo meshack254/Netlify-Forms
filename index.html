@@ -1,0 +1,80 @@
+<html>
+
+<head>
+  <title>registration form in html</title>
+
+<body background="assets/background.jpeg" <center allgn>
+  <h1>registration form</h1>
+  </center>
+  <form name="contact" method="POST" data-netlify="true">
+    <table border="10">
+      <tr>
+        <td>first name</td>
+        <td><input name="fname" type="textbox"></td>
+      </tr>
+      <tr>
+        <td>middle name</td>
+        <td><input name="Mname" type="textbox"></td>
+      </tr>
+      </tr>
+      </tr>
+      <td>lastname</td>
+      <td><input name="1name" type="textbox"></td>
+      <tr>
+        <td>gender</td>
+        <td><input name="Gender" value="male" type="radio">male
+        <td><input name="Gender" value="female" type="radio">female
+      </tr>
+      </tr>
+      <td>hobby</td>
+      <td><input name="singing" type="checkbox">singing
+        <input name="dancing" type="checkbox">dancing
+        <input name="reading" type="checkbox">reading
+        <input name="coding" type="checkbox">coding
+      </td>
+      </tr>
+      <tr>
+        <td>Nationality</td>
+        <td><textarea name="ta" cols="50" rows="5" placeholder="insert nationality here"></textarea></td>
+      </tr>
+      <tr>
+        <td>year group</td>
+        <td>
+          <select year group=year group>
+            <option>select year group</option>
+            <option>MYP4</option>
+            <option>MYP5</option>
+            <option>DP1</option>
+            <option>CP2</option>
+            <option>FORM4</option>
+        </td>
+      </tr>
+      <td><input name="reset" type="reset" value="reset">
+        <input name="submit" type="submit" value="submit" onclick="alert('you registered succefully in the stem club')"></td>
+    </table>
+  </form>
+  it is what it is
+
+
+  <script>
+    document
+  .querySelector("form")
+  .addEventListener("submit", handleSubmit);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  let myForm = document.getElementById("pizzaOrder");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};
+  </script>
+</body>
+</head>
+
+</html>
